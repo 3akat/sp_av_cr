@@ -2,11 +2,15 @@ package com.bedulin.android.app.sp;
 
 import android.app.Activity;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.ArrayAdapter;
+import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 
-public class MyActivity extends Activity {
+public class CharacterCreator extends Activity {
     // ===========================================================
     // Constants
     // ===========================================================
@@ -18,8 +22,12 @@ public class MyActivity extends Activity {
     // ===========================================================
     // Fields
     // ===========================================================
-    private ImageView imageView;
+    private RelativeLayout layoutItem;
+    private GridView gvElements;
+    private ImageView ivCharacter;
     private Bitmap bitmap;
+    private ArrayAdapter<Color> adapter;
+    private Color[] colors;
 
     // ===========================================================
     // Constructors
@@ -35,15 +43,21 @@ public class MyActivity extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);
+        setContentView(R.layout.character);
+
 //      Creating a mutable bitmap. Necessary to monitor the memory.
-        try{
-        bitmap = Bitmap.createBitmap(WIDTH, HEIGHT, Bitmap.Config.ARGB_8888);
-        }catch (OutOfMemoryError e){
-            Log.e(MYLOG,"bitmap out of memory");
+        try {
+            bitmap = Bitmap.createBitmap(WIDTH, HEIGHT, Bitmap.Config.ARGB_8888);
+        } catch (OutOfMemoryError e) {
+            Log.e(MYLOG, "bitmap out of memory");
             bitmap = null;
         }
-        imageView = (ImageView) findViewById(R.id.imageView);
+        ivCharacter = (ImageView) findViewById(R.id.ivCharacter);
+        ivCharacter.setImageResource(R.drawable.push_menu);
+
+
+        gvElements = (GridView) findViewById(R.id.gvElements);
+        gvElements.setAdapter(new ImageAdapter(getApplicationContext()));
     }
 
     // ===========================================================
@@ -53,7 +67,6 @@ public class MyActivity extends Activity {
     // ===========================================================
     // Inner and Anonymous Classes
     // ===========================================================
-
 
 
 }

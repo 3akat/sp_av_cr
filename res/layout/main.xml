@@ -5,10 +5,10 @@
               android:layout_height="fill_parent"
         >
 
-    <TextView
-            android:layout_width="fill_parent"
+    <ImageView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Hello World, MyActivity"
-            />
+            android:id="@+id/imageView"
+            android:layout_gravity="left|center_vertical"/>
 </LinearLayout>
 
