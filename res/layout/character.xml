@@ -10,7 +10,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/ivCharacter"
             android:layout_centerInParent="true"
-            android:layout_gravity="center_vertical"/>
+            android:layout_gravity="center_vertical"
+            android:minWidth="50dp"/>
 
     <GridView
             android:layout_width="fill_parent"

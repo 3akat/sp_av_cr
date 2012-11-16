@@ -30,7 +30,7 @@
     <list default="true" id="b525e281-eaed-4ca8-b506-04ec902b4344" name="Default" comment="" />
     <ignored path="SP Avatar Creator.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/character.xml" changelist="b525e281-eaed-4ca8-b506-04ec902b4344" time="1353051757265" ignored="false" />
+    <file path="/character.xml" changelist="b525e281-eaed-4ca8-b506-04ec902b4344" time="1353054144715" ignored="false" />
     <file path="/ImageAdapter.java" changelist="b525e281-eaed-4ca8-b506-04ec902b4344" time="1353051458401" ignored="false" />
     <file path="/Dummy.txt" changelist="b525e281-eaed-4ca8-b506-04ec902b4344" time="1353050979652" ignored="false" />
     <file path="/CharacterCreator.java" changelist="b525e281-eaed-4ca8-b506-04ec902b4344" time="1353047822610" ignored="false" />
@@ -113,22 +113,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ImageAdapter.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="ImageAdapter.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/bedulin/android/app/sp/ImageAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="72" column="32" selection-start="2700" selection-end="2700" vertical-scroll-proportion="0.52861035">
+            <state line="78" column="115" selection-start="2926" selection-end="2926" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="character.xml" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="character.xml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/res/layout/character.xml">
-          <provider selected="true" editor-type-id="android-designer">
+          <provider editor-type-id="android-designer">
             <state />
           </provider>
-          <provider editor-type-id="text-editor">
-            <state line="14" column="4" selection-start="532" selection-end="532" vertical-scroll-proportion="0.0">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="13" column="41" selection-start="562" selection-end="562" vertical-scroll-proportion="0.32163742">
               <folding />
             </state>
           </provider>
@@ -281,7 +281,7 @@
     <property name="MemberChooser.sorted" value="false" />
     <property name="options.lastSelected" value="editor.preferences.import" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="AndroidLayoutSelectedEditor" value="android-designer" />
+    <property name="AndroidLayoutSelectedEditor" value="text-editor" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
@@ -496,7 +496,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28333333" sideWeight="0.67064846" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3242424" sideWeight="0.67064846" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3242424" sideWeight="0.18941979" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935154" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32978722" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -512,7 +512,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3242424" sideWeight="0.67064846" order="0" side_tool="true" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32473445" sideWeight="0.67064846" order="0" side_tool="true" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32935154" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -679,19 +679,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/character.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state line="14" column="4" selection-start="532" selection-end="532" vertical-scroll-proportion="0.0">
+    <entry file="file://$PROJECT_DIR$/src/com/bedulin/android/app/sp/ImageAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="78" column="115" selection-start="2926" selection-end="2926" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bedulin/android/app/sp/ImageAdapter.java">
+    <entry file="file://$PROJECT_DIR$/res/layout/character.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state line="72" column="32" selection-start="2700" selection-end="2700" vertical-scroll-proportion="0.52861035">
+        <state line="13" column="41" selection-start="562" selection-end="562" vertical-scroll-proportion="0.32163742">
           <folding />
         </state>
       </provider>
