@@ -307,20 +307,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SP Avatar Creator" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -548,10 +534,10 @@
     <task active="true" id="Default" summary="Default task">
       <changelist id="b525e281-eaed-4ca8-b506-04ec902b4344" name="Default" comment="" />
       <created>1352960824854</created>
-      <timeSpent>96931000</timeSpent>
+      <timeSpent>97532000</timeSpent>
       <updated>1352960824854</updated>
     </task>
-    <option name="myTotallyTimeSpent" value="96931000" />
+    <option name="myTotallyTimeSpent" value="97532000" />
     <servers />
   </component>
   <component name="ToolWindowManager">
