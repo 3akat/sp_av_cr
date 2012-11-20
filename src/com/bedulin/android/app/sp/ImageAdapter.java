@@ -1,11 +1,14 @@
 package com.bedulin.android.app.sp;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
+
+import java.util.ArrayList;
 
 /**
  * Created with IntelliJ IDEA.
@@ -23,23 +26,15 @@ public class ImageAdapter extends BaseAdapter {
     // Fields
     // ===========================================================
     private Context mContext;
-    private final int[] mImagesAL;
+    private ArrayList<Integer> mImagesAL;
 
     // ===========================================================
     // Constructors
     // ===========================================================
 
-    public ImageAdapter(Context context) {
+    public ImageAdapter(Context context, ArrayList arrayList) {
         mContext = context;
-        mImagesAL = new int[]{
-                R.drawable.body_strong,R.drawable.body_skinny, R.drawable.body_fat, R.drawable.body_norm,
-                R.drawable.shirt0, R.drawable.shirt1, R.drawable.shirt2, R.drawable.shirt3,
-                R.drawable.legs0, R.drawable.legs1, R.drawable.legs2, R.drawable.legs3,
-                R.drawable.place0, R.drawable.place1, R.drawable.place2, R.drawable.place3,
-                R.drawable.mouth0, R.drawable.mouth1, R.drawable.mouth2, R.drawable.mouth3,
-                R.drawable.hat0, R.drawable.hat1, R.drawable.hat2, R.drawable.hat3,
-                R.drawable.hair0, R.drawable.hair1, R.drawable.hair2, R.drawable.hair3,
-                R.drawable.eyes0, R.drawable.eyes1, R.drawable.eyes2, R.drawable.eyes3};
+        mImagesAL = arrayList;
     }
 
     // ===========================================================
@@ -51,12 +46,12 @@ public class ImageAdapter extends BaseAdapter {
     // ===========================================================
     @Override
     public int getCount() {
-        return mImagesAL.length;
+        return mImagesAL.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return mImagesAL[position];
+        return mImagesAL.get(position);
     }
 
     @Override
@@ -77,7 +72,8 @@ public class ImageAdapter extends BaseAdapter {
             imageView = (ImageView) view;
         }
 
-        imageView.setImageResource(mImagesAL[position]);
+        imageView.setImageResource(mImagesAL.get(position));
+        imageView.setId(mImagesAL.get(position));
         return imageView;
     }
 

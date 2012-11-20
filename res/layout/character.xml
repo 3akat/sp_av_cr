@@ -11,19 +11,20 @@
             android:id="@+id/ivCharacter"
             android:layout_centerInParent="true"
             android:layout_gravity="center_vertical"
-            android:minWidth="50dp"/>
+            android:minWidth="50dp"
+            android:src="@drawable/place_default"/>
 
     <GridView
-            android:layout_width="fill_parent"
-            android:layout_height="55dp"
+            android:layout_width="385dp"
+            android:layout_height="fill_parent"
             android:id="@+id/gvElements"
-            android:background="@android:color/white"
             android:verticalSpacing="1dp"
             android:horizontalSpacing="1dp"
             android:numColumns="5"
             android:layout_centerHorizontal="true"
             android:layout_below="@+id/ivCharacter"
-            android:layout_alignParentBottom="true"/>
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/gv_bg"/>
 
 </RelativeLayout>
 
