@@ -2,9 +2,11 @@ package com.bedulin.android.app.sp;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.LayerDrawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -13,48 +15,82 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageView;
 
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 public class CharacterCreator extends Activity implements AdapterView.OnItemClickListener {
     // ===========================================================
     // Constants
     // ===========================================================
-    /**
-     * Parts id/GridView status
-     */
-    public static final int START = -1;
-    public static final int BODIES = 1;
-    public static final int HATS = 6;
-    public static final int HAIRS = 5;
-    public static final int EYEBROWS = 3;
-    public static final int EYES = 2;
-    public static final int MOUTHS = 4;
-    public static final int HANDS = 8;
-    public static final int SHIRTS = 7;
-    public static final int LEGS = 9;
-    public static final int BOOTS = 10;
-    public static final int PLACES = 0;
-    public static final int SHORT = 11;
-    public static final int LONG = 12;
-    public static final int SPECIAL = 13;
+    public static final String LOG = "CharacterCreatorLog";
+    //  body parts id/GridView status
+    public static final int START    = -1;
+    public static final int PLACES   =  0;
+    public static final int BODIES   =  1;
+    public static final int EYES     =  2;
+    public static final int EYEBROWS =  3;
+    public static final int MOUTHS   =  4;
+    public static final int HAIRS    =  5;
+    public static final int HATS     =  6;
+    public static final int SHIRTS   =  7;
+    public static final int HANDS    =  8;
+    public static final int LEGS     =  9;
+    public static final int BOOTS    =  10;
+    public static final int SHORT    =  11;
+    public static final int LONG     =  12;
+    public static final int SPECIAL  =  13;
 
-    public static final int HEIGHT = 385;
-    public static final int WIDTH = 385;
+    //  substrings for helping to find needed images in assets for grid view initialisation
+    public static final String SUB_START         = "ic_";
+    public static final String SUB_BODY          = "body";
+    public static final String SUB_HAT           = "hat";
+    public static final String SUB_HAIR          = "hair";
+    public static final String SUB_HAIR_LONG     = "hr_long";
+    public static final String SUB_HAIR_SHORT    = "hr_short";
+    public static final String SUB_HAIR_SPECIAL  = "hr_special";
+    public static final String SUB_EYE           = "eye";
+    public static final String SUB_EYEBROW       = "ibrows";
+    public static final String SUB_MOUTH         = "mouth";
+    public static final String SUB_HANDS         = "hands";
+    public static final String SUB_SHIRT         = "shirt";
+    public static final String SUB_LEG           = "leg";
+    public static final String SUB_BOOTS         = "boots";
+    public static final String SUB_PLACE         = "place";
+
+    //  hashCode for some icons
+    public static final int ID_HAIR_SHORT   = 2145339829;   //"hair_short_ic.png".hashCode();
+    public static final int ID_HAIR_LONG    =  -65201765;   //"hair_long_ic.png".hashCode();
+    public static final int ID_HAIR_SPECIAL =  750441340;   //"hair_spec_ic.png".hashCode();
+    public static final int ID_IC_BODIES    = -717170368;   //"hair_short_ic.png".hashCode();
+    public static final int ID_IC_BOOTS     = -325786217;   //"hair_long_ic.png".hashCode();
+    public static final int ID_IC_EYEBROWS  =  1179867882;  //"hair_spec_ic.png".hashCode();
+    public static final int ID_IC_EYES      =  1057396770;  //"hair_short_ic.png".hashCode();
+    public static final int ID_IC_HAIR      = -2015765598;  //"hair_long_ic.png".hashCode();
+    public static final int ID_IC_HANDS     =  1739277882;  //"hair_spec_ic.png".hashCode();
+    public static final int ID_IC_HATS      = -1699921416;  //"hair_short_ic.png".hashCode();
+    public static final int ID_IC_LEGS      = -140778907;   //"hair_long_ic.png".hashCode();
+    public static final int ID_IC_MOUTH     = -2008020067;  //"hair_spec_ic.png".hashCode();
+    public static final int ID_IC_PLACES    = -9514548;     //"hair_short_ic.png".hashCode();
+    public static final int ID_IC_SHIRT     = -1388901044;  //"hair_long_ic.png".hashCode();
+    public static final int ID_IC_BACK      = -1424260691;  //"back_ic.png".hashCode();
 
     // ===========================================================
     // Fields
     // ===========================================================
-    private static int gvStatus;
-
-    private GridView gvElements;
-    private ImageView ivCharacter;
-    private Drawable[] drawableArray;
-    private LayerDrawable layerDrawable;
-    private ImageAdapter adapter;
-
-    private String[] imageList;
-    private ArrayList<Integer> arrayList;
-
+    private static int mGridViewStatus;
+    private static int mHairDeep;
+    private GridView mElementsGV;
+    private ImageView mCharacterIV;
+    private Drawable[] mDrawableForLayer;
+    private LayerDrawable mImageCombinationsLD;
+    private ArrayList<Drawable> mBitmapAL;
+    //  chose images
+    private ArrayList<String> mNames;
+    private Map<Integer, String> mHashForNamesHM;
+    //  all images
+    private String[] mImageNames;
 
     // ===========================================================
     // Constructors
@@ -71,196 +107,93 @@ public class CharacterCreator extends Activity implements AdapterView.OnItemClic
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.character);
-        ivCharacter = (ImageView) findViewById(R.id.ivCharacter);
+        mCharacterIV = (ImageView) findViewById(R.id.ivCharacter);
+        mElementsGV = (GridView) findViewById(R.id.gvElements);
 
-//      layers array for combining images
-        drawableArray = new Drawable[11];
-        for (int i = 1; i < 11; i++) {
-            drawableArray[i] = getResources().getDrawable(R.drawable.place_blank);
+//      get names of images
+//      and creating associations of names with hash keys
+        try {
+            mImageNames = getAssets().list("imgs");
+            mHashForNamesHM = new LinkedHashMap<Integer, String>();
+            for (String s : mImageNames) {
+                mHashForNamesHM.put(s.hashCode(), s);
+            }
+        } catch (IOException e) {
+            Log.e(LOG, "getting list of images " + e.toString());
         }
-        drawableArray[0] = getResources().getDrawable(R.drawable.place_default);
+
+//      layers array for creating avatar
+//      filling all layers with blank image except first one(with white)
+        mDrawableForLayer = new Drawable[11];
+        try {
+            for (int i = 1; i < 11; i++) {
+                mDrawableForLayer[i] = Drawable.createFromStream(getAssets().open("imgs/pl_blank.png"), null);
+            }
+            mDrawableForLayer[0] = Drawable.createFromStream(getAssets().open("imgs/pl_default.jpg"), null);
+            mImageCombinationsLD = new LayerDrawable(mDrawableForLayer);
+            mCharacterIV.setImageDrawable(mImageCombinationsLD);
+        } catch (IOException e) {
+            Log.e(LOG, "layer init " + e.toString());
+        }
 
 //      gridView initialisation
-        gvElements = (GridView) findViewById(R.id.gvElements);
-        gvElements.setOnItemClickListener(this);
-        gvStatus = START;
-        gvElements.setAdapter(initAdapter(adapter, arrayList, gvStatus));
+        mElementsGV.setOnItemClickListener(this);
+        mGridViewStatus = START;
+        mElementsGV.setAdapter(initAdapter(mBitmapAL, mGridViewStatus));
+        mElementsGV.setBackgroundColor(Color.CYAN);
     }
 
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
-        if (gvStatus == START) {
+//      reinitialise grid view on click, depending on its status
+        if (mGridViewStatus == START) {
             switch (view.getId()) {
-                case R.drawable.ic_bodys:
-                    gvElements.setAdapter(initAdapter(adapter, arrayList, BODIES));
+                case ID_IC_BODIES:
+                    mElementsGV.setAdapter(initAdapter(mBitmapAL, BODIES));
                     break;
-                case R.drawable.ic_eyes:
-                    gvElements.setAdapter(initAdapter(adapter, arrayList, EYES));
+                case ID_IC_EYES:
+                    mElementsGV.setAdapter(initAdapter(mBitmapAL, EYES));
                     break;
-                case R.drawable.ic_eyebrows:
-                    gvElements.setAdapter(initAdapter(adapter, arrayList, EYEBROWS));
+                case ID_IC_EYEBROWS:
+                    mElementsGV.setAdapter(initAdapter(mBitmapAL, EYEBROWS));
                     break;
-                case R.drawable.ic_mouth:
-                    gvElements.setAdapter(initAdapter(adapter, arrayList, MOUTHS));
+                case ID_IC_MOUTH:
+                    mElementsGV.setAdapter(initAdapter(mBitmapAL, MOUTHS));
                     break;
-                case R.drawable.ic_hair:
-                    gvElements.setAdapter(initAdapter(adapter, arrayList, HAIRS));
+                case ID_HAIR_LONG:
+                    mElementsGV.setAdapter(initAdapter(mBitmapAL, LONG));
                     break;
-                case R.drawable.ic_hats:
-                    gvElements.setAdapter(initAdapter(adapter, arrayList, HATS));
+                case ID_HAIR_SHORT:
+                    mElementsGV.setAdapter(initAdapter(mBitmapAL, SHORT));
                     break;
-                case R.drawable.ic_hands:
-                    gvElements.setAdapter(initAdapter(adapter, arrayList, HANDS));
+                case ID_HAIR_SPECIAL:
+                    mElementsGV.setAdapter(initAdapter(mBitmapAL, SPECIAL));
                     break;
-                case R.drawable.ic_shirt:
-                    gvElements.setAdapter(initAdapter(adapter, arrayList, SHIRTS));
+                case ID_IC_HAIR:
+                    mElementsGV.setAdapter(initAdapter(mBitmapAL, HAIRS));
                     break;
-                case R.drawable.ic_legs:
-                    gvElements.setAdapter(initAdapter(adapter, arrayList, LEGS));
+                case ID_IC_HATS:
+                    mElementsGV.setAdapter(initAdapter(mBitmapAL, HATS));
                     break;
-                case R.drawable.ic_boots:
-                    gvElements.setAdapter(initAdapter(adapter, arrayList, BOOTS));
+                case ID_IC_HANDS:
+                    mElementsGV.setAdapter(initAdapter(mBitmapAL, HANDS));
                     break;
-                case R.drawable.ic_places:
-                    gvElements.setAdapter(initAdapter(adapter, arrayList, PLACES));
+                case ID_IC_SHIRT:
+                    mElementsGV.setAdapter(initAdapter(mBitmapAL, SHIRTS));
+                    break;
+                case ID_IC_LEGS:
+                    mElementsGV.setAdapter(initAdapter(mBitmapAL, LEGS));
+                    break;
+                case ID_IC_BOOTS:
+                    mElementsGV.setAdapter(initAdapter(mBitmapAL, BOOTS));
+                    break;
+                case ID_IC_PLACES:
+                    mElementsGV.setAdapter(initAdapter(mBitmapAL, PLACES));
                     break;
             }
         } else
-            switch (gvStatus) {
-                case BODIES:
-                    if (view.getId() == R.drawable.ic_back)
-                        gvElements.setAdapter(initAdapter(adapter, arrayList, START));
-                    else {
-                        drawableArray[gvStatus] = getResources().getDrawable(view.getId());
-                        layerDrawable = new LayerDrawable(drawableArray);
-                        ivCharacter.setImageDrawable(layerDrawable);
-                    }
-                    break;
-                case EYES:
-                    if (view.getId() == R.drawable.ic_back)
-                        gvElements.setAdapter(initAdapter(adapter, arrayList, START));
-                    else {
-                        drawableArray[gvStatus] = getResources().getDrawable(view.getId());
-                        layerDrawable = new LayerDrawable(drawableArray);
-                        ivCharacter.setImageDrawable(layerDrawable);
-                    }
-                    break;
-                case EYEBROWS:
-                    if (view.getId() == R.drawable.ic_back)
-                        gvElements.setAdapter(initAdapter(adapter, arrayList, START));
-                    else {
-                        drawableArray[gvStatus] = getResources().getDrawable(view.getId());
-                        layerDrawable = new LayerDrawable(drawableArray);
-                        ivCharacter.setImageDrawable(layerDrawable);
-                    }
-                    break;
-                case MOUTHS:
-                    if (view.getId() == R.drawable.ic_back)
-                        gvElements.setAdapter(initAdapter(adapter, arrayList, START));
-                    else {
-                        drawableArray[gvStatus] = getResources().getDrawable(view.getId());
-                        layerDrawable = new LayerDrawable(drawableArray);
-                        ivCharacter.setImageDrawable(layerDrawable);
-                    }
-                    break;
-                case HAIRS:
-                    switch (view.getId()) {
-                        case R.drawable.ic_back:
-                            gvElements.setAdapter(initAdapter(adapter, arrayList, START));
-                            break;
-                        case R.drawable.ic_short:
-                            gvElements.setAdapter(initAdapter(adapter, arrayList, SHORT));
-                            break;
-                        case R.drawable.ic_long:
-                            gvElements.setAdapter(initAdapter(adapter, arrayList, LONG));
-                            break;
-                        case R.drawable.ic_spec:
-                            gvElements.setAdapter(initAdapter(adapter, arrayList, SPECIAL));
-                            break;
-                    }
-                    break;
-                case SHORT:
-                    if (view.getId() == R.drawable.ic_back)
-                        gvElements.setAdapter(initAdapter(adapter, arrayList, HAIRS));
-                    else {
-                        drawableArray[HAIRS] = getResources().getDrawable(view.getId());
-                        layerDrawable = new LayerDrawable(drawableArray);
-                        ivCharacter.setImageDrawable(layerDrawable);
-                    }
-                    break;
-                case LONG:
-                    if (view.getId() == R.drawable.ic_back)
-                        gvElements.setAdapter(initAdapter(adapter, arrayList, HAIRS));
-                    else {
-                        drawableArray[HAIRS] = getResources().getDrawable(view.getId());
-                        layerDrawable = new LayerDrawable(drawableArray);
-                        ivCharacter.setImageDrawable(layerDrawable);
-                    }
-                    break;
-                case SPECIAL:
-                    if (view.getId() == R.drawable.ic_back)
-                        gvElements.setAdapter(initAdapter(adapter, arrayList, HAIRS));
-                    else {
-                        drawableArray[HAIRS] = getResources().getDrawable(view.getId());
-                        layerDrawable = new LayerDrawable(drawableArray);
-                        ivCharacter.setImageDrawable(layerDrawable);
-                    }
-                    break;
-                case HATS:
-                    if (view.getId() == R.drawable.ic_back)
-                        gvElements.setAdapter(initAdapter(adapter, arrayList, START));
-                    else {
-                        drawableArray[gvStatus] = getResources().getDrawable(view.getId());
-                        layerDrawable = new LayerDrawable(drawableArray);
-                        ivCharacter.setImageDrawable(layerDrawable);
-                    }
-                    break;
-                case HANDS:
-                    if (view.getId() == R.drawable.ic_back)
-                        gvElements.setAdapter(initAdapter(adapter, arrayList, START));
-                    else {
-                        drawableArray[gvStatus] = getResources().getDrawable(view.getId());
-                        layerDrawable = new LayerDrawable(drawableArray);
-                        ivCharacter.setImageDrawable(layerDrawable);
-                    }
-                    break;
-                case SHIRTS:
-                    if (view.getId() == R.drawable.ic_back)
-                        gvElements.setAdapter(initAdapter(adapter, arrayList, START));
-                    else {
-                        drawableArray[gvStatus] = getResources().getDrawable(view.getId());
-                        layerDrawable = new LayerDrawable(drawableArray);
-                        ivCharacter.setImageDrawable(layerDrawable);
-                    }
-                    break;
-                case LEGS:
-                    if (view.getId() == R.drawable.ic_back)
-                        gvElements.setAdapter(initAdapter(adapter, arrayList, START));
-                    else {
-                        drawableArray[gvStatus] = getResources().getDrawable(view.getId());
-                        layerDrawable = new LayerDrawable(drawableArray);
-                        ivCharacter.setImageDrawable(layerDrawable);
-                    }
-                    break;
-                case BOOTS:
-                    if (view.getId() == R.drawable.ic_back)
-                        gvElements.setAdapter(initAdapter(adapter, arrayList, START));
-                    else {
-                        drawableArray[gvStatus] = getResources().getDrawable(view.getId());
-                        layerDrawable = new LayerDrawable(drawableArray);
-                        ivCharacter.setImageDrawable(layerDrawable);
-                    }
-                    break;
-                case PLACES:
-                    if (view.getId() == R.drawable.ic_back)
-                        gvElements.setAdapter(initAdapter(adapter, arrayList, START));
-                    else {
-                        drawableArray[gvStatus] = getResources().getDrawable(view.getId());
-                        layerDrawable = new LayerDrawable(drawableArray);
-                        ivCharacter.setImageDrawable(layerDrawable);
-                    }
-                    break;
-            }
+//          and putting chosen body part to main screen
+                    iconPick(view);
     }
 
     /**
@@ -278,135 +211,170 @@ public class CharacterCreator extends Activity implements AdapterView.OnItemClic
      */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == R.id.send) {
+        if (item.getItemId() == R.id.send)
             startActivity(new Intent(this, SendTo.class));
-        }
         return super.onOptionsItemSelected(item);
     }
+
     // ===========================================================
     // Methods
     // ===========================================================
 
     /**
-     * @param imageAdapter ImageView adapter for gridView
-     * @param arrayList    list for body parts
-     * @param parts        number of needed parts
-     * @return adapter filled by body parts
+     * Reaction on icon click, depends on clicked item id(hash from image name)
+     *
+     * @param view - clicked element
      */
-    public ImageAdapter initAdapter(ImageAdapter imageAdapter, ArrayList<Integer> arrayList, int parts) {
-        if (arrayList == null) {
-            arrayList = new ArrayList();
+    private void iconPick(View view) {
+        Log.e("sdvsdvsd",mHairDeep+"" );
+        switch (view.getId()) {
+            case ID_HAIR_SHORT:
+                mHairDeep = 2;
+                Log.e("2",mHairDeep+"" );
+                mElementsGV.setAdapter(initAdapter(mBitmapAL, SHORT));
+                break;
+            case ID_HAIR_LONG:
+                mHairDeep = 2;
+                Log.e("3",mHairDeep+"" );
+                mElementsGV.setAdapter(initAdapter(mBitmapAL, LONG));
+                break;
+            case ID_HAIR_SPECIAL:
+                mHairDeep = 2;
+                Log.e("4",mHairDeep+"" );
+                mElementsGV.setAdapter(initAdapter(mBitmapAL, SPECIAL));
+                break;
+            case ID_IC_BACK:
+                Log.e("5",mHairDeep+"" );
+                if (mHairDeep == 2){
+                    mElementsGV.setAdapter(initAdapter(mBitmapAL, HAIRS));
+                    mHairDeep = 1;
+                }else{
+                    mElementsGV.setAdapter(initAdapter(mBitmapAL, START));
+                }
+                break;
+            default:
+                Log.e("1",mHairDeep+"" );
+                try {
+                    if (mGridViewStatus == LONG || mGridViewStatus == SHORT || mGridViewStatus == SPECIAL) {
+                        mGridViewStatus = HAIRS;
+                    }
+                    mDrawableForLayer[mGridViewStatus] = Drawable.createFromStream(
+                            getAssets().open("imgs/" + mHashForNamesHM.get(view.getId())), null);
+                } catch (IOException e) {
+                    Log.e(LOG, "iconPick " + e.toString());
+                }catch (ArrayIndexOutOfBoundsException e){
+                    Log.e(LOG, "iconPick " + e.toString());
+                }
+                mImageCombinationsLD = new LayerDrawable(mDrawableForLayer);
+                mCharacterIV.setImageDrawable(mImageCombinationsLD);
+        }
+    }
+
+    /**
+     * @param drawablesList list for body parts
+     * @param parts         number of needed parts
+     */
+    public ImageAdapter initAdapter(ArrayList<Drawable> drawablesList, int parts) {
+        if (drawablesList == null) {
+            drawablesList = new ArrayList();
+            mNames = new ArrayList();
         } else {
-            arrayList.clear();
+            drawablesList.clear();
+            mNames.clear();
         }
         switch (parts) {
             case START:
-                arrayList.add(R.drawable.ic_bodys);
-                arrayList.add(R.drawable.ic_eyes);
-                arrayList.add(R.drawable.ic_eyebrows);
-                arrayList.add(R.drawable.ic_mouth);
-                arrayList.add(R.drawable.ic_hair);
-                arrayList.add(R.drawable.ic_hats);
-                arrayList.add(R.drawable.ic_hands);
-                arrayList.add(R.drawable.ic_shirt);
-                arrayList.add(R.drawable.ic_legs);
-                arrayList.add(R.drawable.ic_boots);
-                arrayList.add(R.drawable.ic_places);
+                searchForImages(SUB_START, drawablesList, mNames);
                 break;
             case BODIES:
-                arrayList.add(R.drawable.body4_fat);
-                arrayList.add(R.drawable.body4_skinny);
-                arrayList.add(R.drawable.body4_strong);
-                arrayList.add(R.drawable.ic_back);
+                searchForImages(SUB_BODY, drawablesList, mNames);
                 break;
             case EYES:
-                arrayList.add(R.drawable.eye3);
-                arrayList.add(R.drawable.eye5);
-                arrayList.add(R.drawable.eye7);
-                arrayList.add(R.drawable.ic_back);
+                searchForImages(SUB_EYE, drawablesList, mNames);
                 break;
             case EYEBROWS:
-                arrayList.add(R.drawable.eyebrows13);
-                arrayList.add(R.drawable.eyebrows5);
-                arrayList.add(R.drawable.eyebrows1);
-                arrayList.add(R.drawable.ic_back);
+                searchForImages(SUB_EYEBROW, drawablesList, mNames);
                 break;
             case MOUTHS:
-                arrayList.add(R.drawable.mouth3);
-                arrayList.add(R.drawable.mouth11);
-                arrayList.add(R.drawable.mouth6);
-                arrayList.add(R.drawable.ic_back);
+                searchForImages(SUB_MOUTH, drawablesList, mNames);
                 break;
             case HAIRS:
-                arrayList.add(R.drawable.ic_short);
-                arrayList.add(R.drawable.ic_long);
-                arrayList.add(R.drawable.ic_spec);
-                arrayList.add(R.drawable.ic_back);
+                searchForImages(SUB_HAIR, drawablesList, mNames);
+                mHairDeep = 1;
                 break;
             case HANDS:
-                arrayList.add(R.drawable.hands1_4);
-                arrayList.add(R.drawable.hands2_4);
-                arrayList.add(R.drawable.hands3_4);
-                arrayList.add(R.drawable.ic_back);
+                searchForImages(SUB_HANDS, drawablesList, mNames);
                 break;
             case LONG:
-                arrayList.add(R.drawable.long2);
-                arrayList.add(R.drawable.long7);
-                arrayList.add(R.drawable.long9);
-                arrayList.add(R.drawable.ic_back);
+                searchForImages(SUB_HAIR_LONG, drawablesList, mNames);
                 break;
             case SHORT:
-                arrayList.add(R.drawable.short11);
-                arrayList.add(R.drawable.short13);
-                arrayList.add(R.drawable.short6);
-                arrayList.add(R.drawable.ic_back);
+                searchForImages(SUB_HAIR_SHORT, drawablesList, mNames);
                 break;
             case SPECIAL:
-                arrayList.add(R.drawable.spec34);
-                arrayList.add(R.drawable.spec35);
-                arrayList.add(R.drawable.spec36);
-                arrayList.add(R.drawable.ic_back);
+                searchForImages(SUB_HAIR_SPECIAL, drawablesList, mNames);
                 break;
             case HATS:
-                arrayList.add(R.drawable.hat14);
-                arrayList.add(R.drawable.hat28);
-                arrayList.add(R.drawable.hat4);
-                arrayList.add(R.drawable.ic_back);
+                searchForImages(SUB_HAT, drawablesList, mNames);
                 break;
             case SHIRTS:
-                arrayList.add(R.drawable.shirt16);
-                arrayList.add(R.drawable.shirt4);
-                arrayList.add(R.drawable.shirt43);
-                arrayList.add(R.drawable.ic_back);
+                searchForImages(SUB_SHIRT, drawablesList, mNames);
                 break;
             case LEGS:
-                arrayList.add(R.drawable.leg16);
-                arrayList.add(R.drawable.leg17);
-                arrayList.add(R.drawable.leg9);
-                arrayList.add(R.drawable.ic_back);
+                searchForImages(SUB_LEG, drawablesList, mNames);
                 break;
             case BOOTS:
-                arrayList.add(R.drawable.boots1);
-                arrayList.add(R.drawable.boots2);
-                arrayList.add(R.drawable.boots3);
-                arrayList.add(R.drawable.ic_back);
+                searchForImages(SUB_BOOTS, drawablesList, mNames);
                 break;
             case PLACES:
-                arrayList.add(R.drawable.place2);
-                arrayList.add(R.drawable.place6);
-                arrayList.add(R.drawable.place8);
-                arrayList.add(R.drawable.ic_back);
+                searchForImages(SUB_PLACE, drawablesList, mNames);
                 break;
         }
-        imageAdapter = new ImageAdapter(this.getApplicationContext(), arrayList);
-        gvStatus = parts;
-        return imageAdapter;
+
+
+            mGridViewStatus = parts;
+
+        return new ImageAdapter(getApplicationContext(), drawablesList, mNames);
+    }
+
+    private void searchForImages(String imageNamePart, ArrayList<Drawable> images, ArrayList<String> names) {
+        Drawable drawable;
+//      checking for prevent loading excess images(example: if searching for SUB_EYE will be added and eye.png and ic_eye.png<--excess)
+        if (SUB_START.equals(imageNamePart)) {
+            for (String fileName : mImageNames) {
+                if (fileName.contains(imageNamePart))
+                    try {
+                        drawable = Drawable.createFromStream(getAssets().open("imgs/" + fileName), null);
+                        names.add(fileName);
+                        images.add(drawable);
+                    } catch (IOException e) {
+                        Log.e(LOG, "Opening images " + e.toString());
+                    }
+            }
+        } else {
+            for (String fileName : mImageNames) {
+                if (fileName.contains(imageNamePart) && !fileName.contains(SUB_START))
+                    try {
+                        drawable = Drawable.createFromStream(getAssets().open("imgs/" + fileName), null);
+                        names.add(fileName);
+                        images.add(drawable);
+                    } catch (IOException e) {
+                        Log.e(LOG, "Opening images " + e.toString());
+                    }
+            }
+            try {
+                drawable = Drawable.createFromStream(getAssets().open("imgs/back_ic.png"), null);
+                names.add("back_ic.png");
+                images.add(drawable);
+            } catch (IOException e) {
+                Log.e(LOG, "Opening images " + e.toString());
+            }
+        }
     }
 
     // ===========================================================
     // Inner and Anonymous Classes
     // ===========================================================
-
 
 }
 //Toast.makeText(this,"Not implemented yet",Toast.LENGTH_SHORT).show();

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+        >
+    <PreferenceCategory
+            android:title="Save image to">
+        <EditTextPreference
+                android:key="facebook"
+                android:title="@string/facebook"
+                android:summary="Save to Facebook">
+        </EditTextPreference>
+        <EditTextPreference
+                android:key="twitter"
+                android:title="@string/twitter"
+                android:summary="Save to Twitter">
+        </EditTextPreference>
+        <EditTextPreference
+                android:key="vkontakte"
+                android:title="@string/vk"
+                android:summary="Save to Vkontakte">
+        </EditTextPreference>
+        <EditTextPreference
+                android:key="email"
+                android:title="@string/email"
+                android:summary="Send to email ">
+        </EditTextPreference>
+        <EditTextPreference
+                android:key="memory"
+                android:title="@string/memory"
+                android:summary="Save to phone memory">
+        </EditTextPreference>
+    </PreferenceCategory>
+
+</PreferenceScreen>

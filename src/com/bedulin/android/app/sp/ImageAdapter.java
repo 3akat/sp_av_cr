@@ -1,7 +1,7 @@
 package com.bedulin.android.app.sp;
 
 import android.content.Context;
-import android.util.Log;
+import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -26,15 +26,16 @@ public class ImageAdapter extends BaseAdapter {
     // Fields
     // ===========================================================
     private Context mContext;
-    private ArrayList<Integer> mImagesAL;
+    private ArrayList<Drawable> mImagesAL;
+    private ArrayList<String> mNamesAL;
 
     // ===========================================================
     // Constructors
     // ===========================================================
-
-    public ImageAdapter(Context context, ArrayList arrayList) {
+    public ImageAdapter(Context context, ArrayList images, ArrayList<String> names) {
         mContext = context;
-        mImagesAL = arrayList;
+        mImagesAL = images;
+        mNamesAL = names;
     }
 
     // ===========================================================
@@ -50,7 +51,7 @@ public class ImageAdapter extends BaseAdapter {
     }
 
     @Override
-    public Object getItem(int position) {
+    public Drawable getItem(int position) {
         return mImagesAL.get(position);
     }
 
@@ -72,8 +73,8 @@ public class ImageAdapter extends BaseAdapter {
             imageView = (ImageView) view;
         }
 
-        imageView.setImageResource(mImagesAL.get(position));
-        imageView.setId(mImagesAL.get(position));
+        imageView.setImageDrawable(getItem(position));
+        imageView.setId(mNamesAL.get(position).hashCode());
         return imageView;
     }
 

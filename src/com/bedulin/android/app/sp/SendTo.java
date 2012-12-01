@@ -1,9 +1,9 @@
 package com.bedulin.android.app.sp;
 
-import android.app.Activity;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.TextView;
+import android.preference.EditTextPreference;
+import android.preference.Preference;
+import android.preference.PreferenceActivity;
 import android.widget.Toast;
 
 /**
@@ -13,7 +13,7 @@ import android.widget.Toast;
  * Time: 6:16 PM
  * To change this template use File | Settings | File Templates.
  */
-public class SendTo extends Activity implements View.OnClickListener {
+public class SendTo extends PreferenceActivity implements Preference.OnPreferenceClickListener, Preference.OnPreferenceChangeListener {
     // ===========================================================
     // Constants
     // ===========================================================
@@ -21,7 +21,7 @@ public class SendTo extends Activity implements View.OnClickListener {
     // ===========================================================
     // Fields
     // ===========================================================
-    private TextView tvFB, tvTW, tvVK, tvMem, tvEM;
+    private EditTextPreference prefFacebook, prefTwitter, prefVkontakte, prefMemory, prefEmail;
 
     // ===========================================================
     // Constructors
@@ -38,31 +38,48 @@ public class SendTo extends Activity implements View.OnClickListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.send);
-        tvFB = (TextView) findViewById(R.id.tvFB);
-        tvFB.setOnClickListener(this);
-        tvTW = (TextView) findViewById(R.id.tvTW);
-        tvTW.setOnClickListener(this);
-        tvVK = (TextView) findViewById(R.id.tvVK);
-        tvVK.setOnClickListener(this);
-        tvMem = (TextView) findViewById(R.id.tvMem);
-        tvMem.setOnClickListener(this);
-        tvEM = (TextView) findViewById(R.id.tvEM);
-        tvEM.setOnClickListener(this);
+        addPreferencesFromResource(R.xml.send);
+
+        prefFacebook  = (EditTextPreference)findPreference("facebook");
+        prefTwitter   = (EditTextPreference)findPreference("twitter");
+        prefVkontakte = (EditTextPreference)findPreference("vkontakte");
+        prefEmail     = (EditTextPreference)findPreference("email");
+        prefMemory    = (EditTextPreference)findPreference("memory");
+
+        prefFacebook.    setOnPreferenceClickListener(this);
+        prefTwitter.     setOnPreferenceClickListener(this);
+        prefVkontakte.   setOnPreferenceClickListener(this);
+        prefEmail.       setOnPreferenceClickListener(this);
+        prefMemory.      setOnPreferenceClickListener(this);
+
+        prefFacebook.    setOnPreferenceChangeListener(this);
+        prefTwitter.     setOnPreferenceChangeListener(this);
+        prefVkontakte.   setOnPreferenceChangeListener(this);
+        prefEmail.       setOnPreferenceChangeListener(this);
+        prefMemory.      setOnPreferenceChangeListener(this);
+
+        prefFacebook.    setDialogMessage(R.string.input_name);
+        prefTwitter.     setDialogMessage(R.string.input_name);
+        prefVkontakte.   setDialogMessage(R.string.input_name);
+        prefEmail.       setDialogMessage(R.string.input_name);
+        prefMemory.      setDialogMessage(R.string.input_name);
 
     }
 
     @Override
-    public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.tvFB:
-            case R.id.tvTW:
-            case R.id.tvVK:
-            case R.id.tvMem:
-            case R.id.tvEM:
-                Toast.makeText(this, "Not implemented yet", Toast.LENGTH_SHORT).show();
+    public boolean onPreferenceClick(Preference preference) {
+        if(!preference.equals(prefMemory)){
+            Toast.makeText(this, "Not implemented yet", Toast.LENGTH_SHORT).show();
         }
+        return true;
     }
+
+    @Override
+    public boolean onPreferenceChange(Preference preference, Object o) {
+                Toast.makeText(this,"Not implemented yet",Toast.LENGTH_SHORT).show();
+        return true;
+    }
+
 
     // ===========================================================
     // Methods

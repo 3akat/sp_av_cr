@@ -3,7 +3,7 @@
   <component name="AndroidDesignerProfile">
     <option name="fullProfile">
       <profile>
-        <option name="device" value="2.7in QVGA" />
+        <option name="device" value="2.7in QVGA slider" />
         <option name="deviceConfiguration" value="Portrait" />
         <option name="targetHashString" value="android-7" />
         <option name="theme" value="Theme" />
@@ -30,11 +30,15 @@
     <list default="true" id="b525e281-eaed-4ca8-b506-04ec902b4344" name="Default" comment="" />
     <ignored path="SP Avatar Creator.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/SendTo.java" changelist="b525e281-eaed-4ca8-b506-04ec902b4344" time="1353445487654" ignored="false" />
-    <file path="/CharacterCreator.java" changelist="b525e281-eaed-4ca8-b506-04ec902b4344" time="1353445337670" ignored="false" />
-    <file path="/Dummy.txt" changelist="b525e281-eaed-4ca8-b506-04ec902b4344" time="1353442788637" ignored="false" />
+    <file path="/Dummy.txt" changelist="b525e281-eaed-4ca8-b506-04ec902b4344" time="1354389257116" ignored="false" />
+    <file path="/strings.xml" changelist="b525e281-eaed-4ca8-b506-04ec902b4344" time="1354362624818" ignored="false" />
+    <file path="/SendTo.java" changelist="b525e281-eaed-4ca8-b506-04ec902b4344" time="1354362576715" ignored="false" />
+    <file path="/CharacterCreator.java" changelist="b525e281-eaed-4ca8-b506-04ec902b4344" time="1354341616111" ignored="false" />
+    <file path="/character.xml" changelist="b525e281-eaed-4ca8-b506-04ec902b4344" time="1354283742684" ignored="false" />
+    <file path="/fragment.java" changelist="b525e281-eaed-4ca8-b506-04ec902b4344" time="1354276731957" ignored="false" />
+    <file path="/arrays.xml" changelist="b525e281-eaed-4ca8-b506-04ec902b4344" time="1353662474855" ignored="false" />
+    <file path="/AndroidManifest.xml" changelist="b525e281-eaed-4ca8-b506-04ec902b4344" time="1353603848259" ignored="false" />
     <file path="/item.xml" changelist="b525e281-eaed-4ca8-b506-04ec902b4344" time="1352979246661" ignored="false" />
-    <file path="/fragment.java" changelist="b525e281-eaed-4ca8-b506-04ec902b4344" time="1352972292600" ignored="false" />
     <file path="/MyActivity.java" changelist="b525e281-eaed-4ca8-b506-04ec902b4344" time="1352967928748" ignored="false" />
     <file path="/alphashow.xml" changelist="b525e281-eaed-4ca8-b506-04ec902b4344" time="1352973144256" ignored="false" />
     <file path="/alpha.xml" changelist="b525e281-eaed-4ca8-b506-04ec902b4344" time="1352973147934" ignored="false" />
@@ -43,11 +47,14 @@
     <file path="$PROJECT_DIR$/AndEngine/res/layout/main.xml" changelist="b525e281-eaed-4ca8-b506-04ec902b4344" time="1353071882361" ignored="false" />
     <file path="/IntroActivity.java" changelist="b525e281-eaed-4ca8-b506-04ec902b4344" time="1353333937259" ignored="false" />
     <file path="/intro.xml" changelist="b525e281-eaed-4ca8-b506-04ec902b4344" time="1353333999402" ignored="false" />
-    <file path="/character.xml" changelist="b525e281-eaed-4ca8-b506-04ec902b4344" time="1353335846598" ignored="false" />
     <file path="/menu.xml" changelist="b525e281-eaed-4ca8-b506-04ec902b4344" time="1353338084959" ignored="false" />
-    <file path="/AndroidManifest.xml" changelist="b525e281-eaed-4ca8-b506-04ec902b4344" time="1353338332596" ignored="false" />
-    <file path="/strings.xml" changelist="b525e281-eaed-4ca8-b506-04ec902b4344" time="1353338483026" ignored="false" />
-    <file path="/ImageAdapter.java" changelist="b525e281-eaed-4ca8-b506-04ec902b4344" time="1353440626789" ignored="false" />
+    <file path="/sample.java" changelist="b525e281-eaed-4ca8-b506-04ec902b4344" time="1353943692133" ignored="false" />
+    <file path="/a.java" changelist="b525e281-eaed-4ca8-b506-04ec902b4344" time="1353943694720" ignored="false" />
+    <file path="/BitmapDrawableWithID.java" changelist="b525e281-eaed-4ca8-b506-04ec902b4344" time="1354172430438" ignored="false" />
+    <file path="/ImageAdapter.java" changelist="b525e281-eaed-4ca8-b506-04ec902b4344" time="1354179651697" ignored="false" />
+    <file path="/RecursionQuiz1.java" changelist="b525e281-eaed-4ca8-b506-04ec902b4344" time="1354206375145" ignored="false" />
+    <file path="$PROJECT_DIR$/../../testingFich/src/RecursionQuiz1.java" changelist="b525e281-eaed-4ca8-b506-04ec902b4344" time="1354206411818" ignored="false" />
+    <file path="/send.xml" changelist="b525e281-eaed-4ca8-b506-04ec902b4344" time="1354355259183" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +69,6 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
-    <breakpoint_rules default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -98,6 +104,7 @@
       </breakpoint>
     </breakpoint_any>
     <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
+    <breakpoint_rules default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -111,12 +118,8 @@
       <file leaf-file-name="CharacterCreator.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/bedulin/android/app/sp/CharacterCreator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="70" column="52" selection-start="2430" selection-end="2430" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="method#onCreate#0;class#CharacterCreator#0" expanded="false" />
-                <element signature="method#onItemClick#0;class#CharacterCreator#0" expanded="false" />
-                <element signature="method#onCreateOptionsMenu#0;class#CharacterCreator#0" expanded="false" />
-              </folding>
+            <state line="379" column="0" selection-start="15984" selection-end="16055" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -124,7 +127,58 @@
       <file leaf-file-name="SendTo.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/bedulin/android/app/sp/SendTo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="36" selection-start="1414" selection-end="1414" vertical-scroll-proportion="0.28610355">
+            <state line="74" column="25" selection-start="3120" selection-end="3120" vertical-scroll-proportion="0.5480226">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="intro.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/layout/intro.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="14" column="114" selection-start="537" selection-end="537" vertical-scroll-proportion="-9.52">
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="send.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/xml/send.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="22" column="34" selection-start="838" selection-end="843" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="character.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/layout/character.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="21" column="25" selection-start="859" selection-end="859" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="strings.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="40" selection-start="351" selection-end="351" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ImageAdapter.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/bedulin/android/app/sp/ImageAdapter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="69" column="49" selection-start="2251" selection-end="2251" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -148,21 +202,21 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/res/layout/item.xml" />
-        <option value="$PROJECT_DIR$/src/com/bedulin/android/app/sp/ArrayAdapter.java" />
-        <option value="$PROJECT_DIR$/src/AnimatedSprite.java" />
-        <option value="$PROJECT_DIR$/src/TiledSprite.java" />
-        <option value="$PROJECT_DIR$/src/com/bedulin/android/app/sp/IntroActivity.java" />
-        <option value="$PROJECT_DIR$/res/layout/intro.xml" />
-        <option value="$PROJECT_DIR$/res/layout/character.xml" />
         <option value="$PROJECT_DIR$/res/menu/menu.xml" />
-        <option value="$PROJECT_DIR$/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/res/layout/send.xml" />
         <option value="$PROJECT_DIR$/src/com/bedulin/android/app/sp/TextureManager.java" />
         <option value="$PROJECT_DIR$/src/com/bedulin/android/app/sp/BitmapTextureAtlasTextureRegionFactory.java" />
+        <option value="$PROJECT_DIR$/res/values/arrays.xml" />
+        <option value="$PROJECT_DIR$/src/com/bedulin/android/app/sp/BitmapDrawableWithID.java" />
+        <option value="$PROJECT_DIR$/src/com/bedulin/android/app/sp/DrawableWithID.java" />
+        <option value="$PROJECT_DIR$/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/res/layout/intro.xml" />
+        <option value="$PROJECT_DIR$/res/layout/test.xml" />
         <option value="$PROJECT_DIR$/src/com/bedulin/android/app/sp/ImageAdapter.java" />
+        <option value="$PROJECT_DIR$/res/layout/character.xml" />
         <option value="$PROJECT_DIR$/src/com/bedulin/android/app/sp/CharacterCreator.java" />
+        <option value="$PROJECT_DIR$/res/xml/send.xml" />
+        <option value="$PROJECT_DIR$/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/src/com/bedulin/android/app/sp/SendTo.java" />
       </list>
     </option>
@@ -252,10 +306,6 @@
               <option name="myItemId" value="res" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="values" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -267,66 +317,31 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SP Avatar Creator" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="layout" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SP Avatar Creator" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="drawable" />
+              <option name="myItemId" value="assets" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="GoToFile.includeJavaFiles" value="false" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="OverrideImplement.combined" value="false" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="recentsLimit" value="5" />
     <property name="MemberChooser.sorted" value="false" />
-    <property name="options.lastSelected" value="editor.preferences.import" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../AndEngine" />
+    <property name="options.lastSelected" value="preferences.sourceCode.Java" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../testingFich" />
     <property name="AndroidLayoutSelectedEditor" value="text-editor" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+    <property name="restartRequiresConfirmation" value="true" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
     <property name="options.splitter.details.proportions" value="0.2" />
@@ -334,6 +349,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Work\workspace\apps\sp\assets\images" />
       <recent name="D:\Work\workspace\apps\sp\src\com\bedulin\android\app\sp" />
       <recent name="D:\Work\workspace\apps\sp\src" />
       <recent name="D:\Work\workspace\apps\sp\res\anim" />
@@ -341,27 +357,13 @@
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Work\workspace\apps\sp\res\drawable" />
-      <recent name="D:\Work\workspace\apps\sp\res\layout" />
+      <recent name="D:\Work\workspace\apps\sp\assets\imgs" />
+      <recent name="D:\Work\workspace\apps\sp\assets" />
+      <recent name="D:\Work\workspace\apps\sp\res\xml" />
+      <recent name="D:\Work\workspace\apps\sp" />
     </key>
   </component>
-  <component name="RunManager" selected="Android Application.IntroActivity">
-    <configuration default="false" name="IntroActivity" type="AndroidRunConfigurationType" factoryName="Android Application" temporary="true">
-      <module name="sp" />
-      <option name="ACTIVITY_CLASS" value="com.bedulin.android.app.sp.IntroActivity" />
-      <option name="MODE" value="specific_activity" />
-      <option name="DEPLOY" value="true" />
-      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
-      <option name="PREFERRED_AVD" value="" />
-      <option name="COMMAND_LINE" value="" />
-      <option name="WIPE_USER_DATA" value="false" />
-      <option name="DISABLE_BOOT_ANIMATION" value="false" />
-      <option name="NETWORK_SPEED" value="full" />
-      <option name="NETWORK_LATENCY" value="none" />
-      <option name="CLEAR_LOGCAT" value="false" />
-      <RunnerSettings RunnerId="AndroidDebugRunner" />
-      <ConfigurationWrapper RunnerId="AndroidDebugRunner" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Android Application.sp">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
@@ -485,7 +487,7 @@
     <configuration default="false" name="sp" type="AndroidRunConfigurationType" factoryName="Android Application">
       <module name="sp" />
       <option name="ACTIVITY_CLASS" value="com.bedulin.android.app.sp.CharacterCreator" />
-      <option name="MODE" value="specific_activity" />
+      <option name="MODE" value="default_activity" />
       <option name="DEPLOY" value="true" />
       <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
       <option name="PREFERRED_AVD" value="" />
@@ -494,18 +496,14 @@
       <option name="DISABLE_BOOT_ANIMATION" value="false" />
       <option name="NETWORK_SPEED" value="full" />
       <option name="NETWORK_LATENCY" value="none" />
-      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="CLEAR_LOGCAT" value="true" />
+      <RunnerSettings RunnerId="AndroidDebugRunner" />
+      <ConfigurationWrapper RunnerId="AndroidDebugRunner" />
       <method />
     </configuration>
-    <list size="2">
+    <list size="1">
       <item index="0" class="java.lang.String" itemvalue="Android Application.sp" />
-      <item index="1" class="java.lang.String" itemvalue="Android Application.IntroActivity" />
     </list>
-    <recent_temporary>
-      <list size="1">
-        <item index="0" class="java.lang.String" itemvalue="Android Application.IntroActivity" />
-      </list>
-    </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
       <Port>5050</Port>
@@ -534,10 +532,10 @@
     <task active="true" id="Default" summary="Default task">
       <changelist id="b525e281-eaed-4ca8-b506-04ec902b4344" name="Default" comment="" />
       <created>1352960824854</created>
-      <timeSpent>97532000</timeSpent>
+      <timeSpent>224772000</timeSpent>
       <updated>1352960824854</updated>
     </task>
-    <option name="myTotallyTimeSpent" value="97532000" />
+    <option name="myTotallyTimeSpent" value="224772000" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -548,13 +546,14 @@
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32978722" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935154" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.49829352" sideWeight="0.49772382" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5017065" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935154" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.8498294" sideWeight="0.4969651" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2883959" sideWeight="0.4969651" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -563,9 +562,8 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32935154" sideWeight="0.4969651" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28333333" sideWeight="0.67064846" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32348484" sideWeight="0.17064847" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32348484" sideWeight="0.12798634" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935154" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -632,38 +630,85 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/res/layout/character.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="25" selection-start="859" selection-end="859" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/bedulin/android/app/sp/ImageAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="69" column="49" selection-start="2251" selection-end="2251" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/bedulin/android/app/sp/CharacterCreator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="275" column="104" selection-start="12088" selection-end="12088" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/bedulin/android/app/sp/CharacterCreator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="134" column="25" selection-start="6522" selection-end="6522" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../../android-sdk-windows/platforms/android-7/android.jar!/android/graphics/drawable/BitmapDrawable.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="13" selection-start="168" selection-end="168" vertical-scroll-proportion="0.15539305" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="58" selection-start="907" selection-end="907" vertical-scroll-proportion="0.0">
+        <state line="10" column="47" selection-start="434" selection-end="434" vertical-scroll-proportion="0.46321526">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/bedulin/android/app/sp/ImageAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="69" column="49" selection-start="2251" selection-end="2251" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../../android-sdk-windows/platforms/android-7/android.jar!/android/widget/GridView.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="16" selection-start="857" selection-end="857" vertical-scroll-proportion="0.33333334" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/bedulin/android/app/sp/CharacterCreator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="379" column="0" selection-start="15984" selection-end="16055" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="30" selection-start="301" selection-end="301" vertical-scroll-proportion="0.0">
+        <state line="9" column="40" selection-start="351" selection-end="351" vertical-scroll-proportion="0.0">
           <folding />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gen/com/bedulin/android/app/sp/R.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="19" selection-start="145" selection-end="145" vertical-scroll-proportion="0.09461967" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gen/com/bedulin/android/app/sp/Manifest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="19" selection-start="152" selection-end="152" vertical-scroll-proportion="0.09461967" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gen/com/bedulin/android/app/sp/BuildConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="19" selection-start="107" selection-end="107" vertical-scroll-proportion="0.09461967" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/character.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="45" selection-start="1077" selection-end="1077" vertical-scroll-proportion="0.0">
+        <state line="21" column="25" selection-start="859" selection-end="859" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -671,67 +716,26 @@
         <state />
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/../../../android-sdk-windows/platforms/android-7/android.jar!/android/widget/GridView.class">
+    <entry file="file://$PROJECT_DIR$/res/xml/send.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="16" selection-start="857" selection-end="857" vertical-scroll-proportion="0.33272395" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bedulin/android/app/sp/ImageAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="75" column="56" selection-start="2392" selection-end="2392" vertical-scroll-proportion="0.11989101">
+        <state line="22" column="34" selection-start="838" selection-end="843" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/send.xml">
+    <entry file="file://$PROJECT_DIR$/res/layout/intro.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="33" selection-start="443" selection-end="447" vertical-scroll-proportion="0.049707603">
+        <state line="14" column="114" selection-start="537" selection-end="537" vertical-scroll-proportion="-9.52">
           <folding />
         </state>
       </provider>
       <provider editor-type-id="android-designer">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/drawable/ic_bodys.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/drawable/body4_fat.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/drawable/place_default.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/drawable/ic_back.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/drawable/ic_places.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bedulin/android/app/sp/CharacterCreator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="70" column="52" selection-start="2430" selection-end="2430" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="method#onCreate#0;class#CharacterCreator#0" expanded="false" />
-            <element signature="method#onItemClick#0;class#CharacterCreator#0" expanded="false" />
-            <element signature="method#onCreateOptionsMenu#0;class#CharacterCreator#0" expanded="false" />
-          </folding>
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/bedulin/android/app/sp/SendTo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="36" selection-start="1414" selection-end="1414" vertical-scroll-proportion="0.28610355">
+        <state line="74" column="25" selection-start="3120" selection-end="3120" vertical-scroll-proportion="0.5480226">
           <folding />
         </state>
       </provider>
@@ -776,7 +780,7 @@
       </state>
       <state key="JdkListConfigurable.UI">
         <settings>
-          <last-edited>1.7</last-edited>
+          <last-edited>Android 2.1 Platform</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

@@ -19,8 +19,7 @@
             </intent-filter>
         </activity>
         <activity
-                android:name=".SendTo"
-                android:theme="@android:style/Theme.Dialog">
+                android:name=".SendTo">
         </activity>
     </application>
 </manifest> 
