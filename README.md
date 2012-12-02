@@ -1,2 +1,2 @@
-sp_av_cr
+SP Avatar Creator
 ========
